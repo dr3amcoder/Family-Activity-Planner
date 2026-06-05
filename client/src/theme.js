@@ -35,7 +35,7 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily:
-      "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
     h1: {
       fontWeight: 800,
       letterSpacing: 0,

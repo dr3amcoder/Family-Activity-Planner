@@ -16,7 +16,6 @@ import CurrencyPoundOutlinedIcon from "@mui/icons-material/CurrencyPoundOutlined
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
-import { formatCostLabel } from "../utils/formatCost.js";
 
 const activityTypes = [
   "Outdoor",
@@ -115,7 +114,7 @@ export default function ActivityForm({ formState, onChange, onTogglePreference, 
           >
             {budgets.map((budget) => (
               <MenuItem key={budget} value={budget}>
-                {formatCostLabel(budget)}
+                {budget}
               </MenuItem>
             ))}
           </Select>
