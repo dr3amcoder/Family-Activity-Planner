@@ -1,3 +1,5 @@
+import { formatCostLabel } from "./formatCost.js";
+
 const budgetRank = {
   Free: 0,
   "Low cost": 1,
@@ -27,7 +29,7 @@ function getMatchReasons(activity, userPreferences) {
   }
 
   if (budgetRank[activity.cost] <= budgetRank[userPreferences.budget]) {
-    reasons.push(`${activity.cost} option`);
+    reasons.push(`${formatCostLabel(activity.cost)} option`);
   }
 
   if (userPreferences.timeAvailable === "Under 2 hours" && activity.duration === "Under 2 hours") {

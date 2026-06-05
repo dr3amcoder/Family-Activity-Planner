@@ -12,10 +12,11 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import CurrencyPoundOutlinedIcon from "@mui/icons-material/CurrencyPoundOutlined";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import TuneRoundedIcon from "@mui/icons-material/TuneRounded";
+import { formatCostLabel } from "../utils/formatCost.js";
 
 const activityTypes = [
   "Outdoor",
@@ -108,13 +109,13 @@ export default function ActivityForm({ formState, onChange, onTogglePreference, 
             onChange={onChange}
             startAdornment={
               <InputAdornment position="start">
-                <AttachMoneyOutlinedIcon color="primary" fontSize="small" />
+                <CurrencyPoundOutlinedIcon color="primary" fontSize="small" />
               </InputAdornment>
             }
           >
             {budgets.map((budget) => (
               <MenuItem key={budget} value={budget}>
-                {budget}
+                {formatCostLabel(budget)}
               </MenuItem>
             ))}
           </Select>

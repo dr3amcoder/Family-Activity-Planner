@@ -11,6 +11,7 @@ import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 import { palette } from "../theme.js";
+import { formatCostLabel } from "../utils/formatCost.js";
 
 export default function ActivityCard({ activity }) {
   return (
@@ -30,7 +31,7 @@ export default function ActivityCard({ activity }) {
           </Box>
           <Chip
             color={activity.cost === "Free" ? "primary" : "secondary"}
-            label={activity.cost}
+            label={formatCostLabel(activity.cost)}
             size="small"
             sx={{
               bgcolor: activity.cost === "Free" ? palette.sage : palette.peach,
@@ -44,7 +45,7 @@ export default function ActivityCard({ activity }) {
 
         <Box className="activity-meta">
           <MetaItem icon={<AccessTimeOutlinedIcon />} label="Duration" value={activity.duration} />
-          <MetaItem icon={<SavingsOutlinedIcon />} label="Cost" value={activity.cost} />
+          <MetaItem icon={<SavingsOutlinedIcon />} label="Cost" value={formatCostLabel(activity.cost)} />
           <MetaItem icon={<PlaceOutlinedIcon />} label="Location" value={activity.locationType} />
         </Box>
 
